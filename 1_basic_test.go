@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+// Simple
+//
 // Notes:
 //
 // - The name of the test function must start with Test.
@@ -21,6 +23,7 @@ func TestSplit(t *testing.T) {
 
 // Coverage:
 //
+// Notes:
 // Checks for all possible code branches.
 // go test -coverprofile=c.out
 //
@@ -32,6 +35,7 @@ func TestSplit(t *testing.T) {
 //
 // We need to test boundary conditions, for example, what happens if we try to
 // split it on a comma?
+// This is where table driven tests come into play.
 func TestSplitWrongSep(t *testing.T) {
 	got := Split("a/b/c", ",")
 	want := []string{"a/b/c"}
@@ -39,6 +43,3 @@ func TestSplitWrongSep(t *testing.T) {
 		t.Fatalf("expected: %v, got: %v", want, got)
 	}
 }
-
-
-
